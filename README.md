@@ -178,6 +178,7 @@ tools/            patches.py       图斑化 + 矢量导出
                   error_atlas.py   四类错误图册
                   sliding_window.py      滑窗大图推理
                   export_onnx.py / onnx_eval.py  导出与部署基准
+                  fetch_bit_official.py          拉取 BIT 官方实现（C1 用，见 NOTICE）
 docs/             每项交付物的方法文档（见下）
 EXPERIMENTS.md    实验登记表：每条含假设 / 结果 / 结论
 ```
@@ -209,3 +210,13 @@ EXPERIMENTS.md    实验登记表：每条含假设 / 结果 / 结论
 
 本仓库**不含** `crops/`（2.93 GB）、`weights/`、`run/`（训练产物），这些都在 `.gitignore` 里。
 数据由 `data/make_crops.py` 从公开的 LEVIR-CD 生成，`crops/manifest.csv` 已入库，可用于核对切分是否一致。
+
+## 许可与第三方代码
+
+本项目原创代码与文档采用 **MIT**（见 [`LICENSE`](LICENSE)）。第三方资源见 [`NOTICE.md`](NOTICE.md)，三点值得注意：
+
+1. **BIT 官方实现不随仓库分发**。上游 `justchenhao/BIT_CD` 未声明许可证，重新分发其源码不合规，
+   因此改为运行时拉取：`python tools/fetch_bit_official.py`，落到 `BIT_LEVIR/official/`（已 gitignore）。
+   本项目**未修改**其任何文件，只在外层注入 `torchvision.models.utils` 兼容 shim。
+2. **ImageNet 预训练权重与 LEVIR-CD 数据集均不重新分发**，仅由脚本下载或由使用者自行获取。
+3. `crops/manifest.csv` 只含文件名与统计量，不含影像内容。

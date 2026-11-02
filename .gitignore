@@ -7,6 +7,9 @@ crops/*
 weights/
 *.zip
 
+# 第三方源码：上游未声明许可证，改为运行时拉取（见 NOTICE.md / tools/fetch_bit_official.py）
+BIT_LEVIR/official/
+
 # 第三方权重（来源与用途见 docs/model_v1.md）
 BIT_LEVIR/*.pt
 PAM-pretrain/*.pth

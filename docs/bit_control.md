@@ -122,6 +122,9 @@ F1 从 0.689 直接跳到 0.888，与论文的 0.894 只差 0.6 点。
 ## 8. 复现
 
 ```bash
+# 0) 先拉取官方实现（上游无许可证，不随仓库分发，见 NOTICE.md）
+python tools/fetch_bit_official.py
+
 # 正式评测（默认 --bn-adapt train，必须保留）
 python tools/bit_eval.py --split val  --bn-adapt train
 python tools/bit_eval.py --split test --bn-adapt train
