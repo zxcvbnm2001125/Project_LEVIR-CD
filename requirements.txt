@@ -1,0 +1,20 @@
+# 核心训练与评测依赖（实测版本，RTX 4060 Laptop / CUDA 12.6）
+# torch 请按自己的 CUDA 版本安装：https://pytorch.org/get-started/locally/
+torch>=2.0
+torchvision>=0.15
+numpy>=1.24
+scipy>=1.10
+pillow>=9.0
+matplotlib>=3.6
+opencv-python>=4.7
+
+# 指标与后处理（图斑化、连通域、边界距离变换）
+# scipy 已覆盖 ndimage；如需导出 shapefile 可另行安装 geopandas/rasterio（非必需）
+
+# C1：BIT 结构对照（官方代码依赖）
+einops>=0.6
+
+# 部署：ONNX 导出与推理
+onnx>=1.14
+onnxruntime-gpu>=1.16      # 仅 CPU 环境可改为 onnxruntime
+onnxconverter-common>=1.14  # FP16 转换；注意它可能把 numpy 升到 2.x

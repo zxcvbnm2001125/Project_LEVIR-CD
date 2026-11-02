@@ -1,0 +1,23 @@
+# 数据与权重：体积大，不入库；由脚本 + manifest 复现
+crops/*
+!crops/manifest.csv
+!crops/crops_summary_256.json
+!crops/hard_neg_scores.csv
+!crops/review_queue_40.csv
+weights/
+*.zip
+
+# 第三方权重（来源与用途见 docs/model_v1.md）
+BIT_LEVIR/*.pt
+PAM-pretrain/*.pth
+
+# 运行产物
+run/
+__pycache__/
+*.pyc
+*.pyo
+
+# 本地工具与 agent 状态
+.workbuddy/
+.vscode/
+.idea/

@@ -1,0 +1,36 @@
+{
+  "size": 256,
+  "overlap": 0,
+  "splits": {
+    "train": {
+      "n_src": 445,
+      "n_tiles": 7120,
+      "grid": "4x4",
+      "empty_tiles": 3953,
+      "empty_ratio_pct": 55.52,
+      "pos_pixel_ratio_pct": 4.589,
+      "seconds": 10.7,
+      "sec_per_image": 0.02
+    },
+    "val": {
+      "n_src": 64,
+      "n_tiles": 1024,
+      "grid": "4x4",
+      "empty_tiles": 588,
+      "empty_ratio_pct": 57.42,
+      "pos_pixel_ratio_pct": 4.197,
+      "seconds": 2.0,
+      "sec_per_image": 0.03
+    },
+    "test": {
+      "n_src": 128,
+      "n_tiles": 2048,
+      "grid": "4x4",
+      "empty_tiles": 1113,
+      "empty_ratio_pct": 54.35,
+      "pos_pixel_ratio_pct": 5.094,
+      "seconds": 3.7,
+      "sec_per_image": 0.03
+    }
+  }
+}
